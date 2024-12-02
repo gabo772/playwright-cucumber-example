@@ -1,7 +1,7 @@
 
 import { Given, When, Then } from '@cucumber/cucumber';
 import CustomWorld from './../config/world'
-import { expect } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 import { CucumberPage } from '../pages/CucumberPage';
 
 
@@ -28,7 +28,7 @@ Then("valido que estoy en Docs", async function () {
 
 })
 
-When("busco seccion {string}", { timeout: 15000 }, async function (this: CustomWorld, variableReport:string) {
+When("busco seccion {string}", { timeout: 15000 }, async function (this: CustomWorld, variableReport: string) {
     //(//input[@placeholder='How can we help?'])[1]
     const inputSeccion = await this.page.locator("xpath=(//input[@placeholder='How can we help?'])[1]")
     await expect(inputSeccion).toBeEnabled();
@@ -40,8 +40,8 @@ When("busco seccion {string}", { timeout: 15000 }, async function (this: CustomW
     await this.page.waitForTimeout(4000)
 })
 
-Then('valido que estoy en {string}', {timeout:10000},async function(this: CustomWorld,url: string) {
-  // Write code here that turns the phrase above into concrete actions
-  await expect(this.page).toHaveURL(url);
-  await this.page.waitForTimeout(5000);
+Then('valido que estoy en {string}', { timeout: 10000 }, async function (this: CustomWorld, url: string) {
+    // Write code here that turns the phrase above into concrete actions
+    await expect(this.page).toHaveURL(url);
+    await this.page.waitForTimeout(5000);
 })
