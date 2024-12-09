@@ -34,8 +34,6 @@ When("busco seccion {string}", { timeout: 15000 }, async function (this: CustomW
     await expect(inputSeccion).toBeEnabled();
     await inputSeccion.fill(variableReport)
     await this.page.waitForTimeout(5000)
-    await inputSeccion.press("ArrowDown")
-    await this.page.waitForTimeout(1000)
     await inputSeccion.press("Enter")
     await this.page.waitForTimeout(4000)
 })
