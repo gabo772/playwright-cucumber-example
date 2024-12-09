@@ -8,7 +8,7 @@ setWorldConstructor(CustomWorld)
 
 //Hooks Cucumber
 
-Before(async function (this: CustomWorld) {
+Before({timeout:15000},async function (this: CustomWorld) {
 
     await this.init();
 
