@@ -1,5 +1,6 @@
 import { World } from "@cucumber/cucumber";
 import { Browser, chromium, Page, firefox, webkit, BrowserType } from "@playwright/test";
+import { Platform } from "../utils/metaclass";
 
 
 export default class extends World {
@@ -12,23 +13,23 @@ export default class extends World {
     }
 
 
-    async init(navegador: string) {
+    async init(navegador: Platform) {
         let tipoNavegador!: BrowserType
         let channel: string;
         switch (navegador) {
-            case "chrome":
+            case Platform.CHROME:
                 tipoNavegador = chromium;
                 channel = "chrome"
                 break;
-            case "edge":
+            case Platform.EDGE:
                 tipoNavegador = chromium;
                 channel = "msedge"
                 break;
-            case "firefox":
+            case Platform.FIREFOX:
                 tipoNavegador = firefox;
                 channel = "firefox"
                 break;
-            case "safari":
+            case Platform.SAFARI:
                 tipoNavegador = webkit;
                 channel = "webkit"
                 break;
@@ -39,6 +40,12 @@ export default class extends World {
             channel: channel,
             headless: true
         });
-        this.page = await this.browser.newPage();
+        const context = await this.browser.newContext({
+            viewport: {
+              width: 1920, // Ancho deseado
+              height: 1080, // Altura deseada
+            },
+          });
+        this.page = await context.newPage();
     }
 }

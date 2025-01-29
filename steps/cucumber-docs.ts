@@ -1,7 +1,7 @@
 
 import { Given, When, Then } from '@cucumber/cucumber';
 import CustomWorld from './../config/world'
-import { expect, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { CucumberPage } from '../pages/CucumberPage';
 
 
@@ -42,4 +42,32 @@ Then('valido que estoy en {string}', { timeout: 10000 }, async function (this: C
     // Write code here that turns the phrase above into concrete actions
     await expect(this.page).toHaveURL(url);
     await this.page.waitForTimeout(5000);
+})
+
+
+
+Given('valido que estoy en la seccion docs',async function (this: CustomWorld) {
+  await expect(this.page).toHaveURL("https://cucumber.io/docs/guides/api-automation/?lang=java")
+})
+
+
+When('selecciono icono {string}', async function(this: CustomWorld,lenguaje:string) {
+  
+    let elem! : Locator;
+    switch(lenguaje){
+        case "java":
+            console.log("ITS JAVA");
+            elem=this.page.locator("xpath=//li[@data-language='java']")
+            break;
+        case "javascript":
+            console.log("ITS JAVASCRIPT");
+            elem=this.page.locator("xpath=//li[@data-language='javascript']")
+            break;
+                        
+    }
+    await elem.click();
+})
+
+Then("valido que estoy en la seccion {string}",async function(this: CustomWorld,url:string){
+     await expect(this.page).toHaveURL(url);
 })

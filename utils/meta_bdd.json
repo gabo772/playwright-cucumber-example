@@ -1,0 +1,26 @@
+{
+    "execution": {
+        "executor": {
+            "name": "Gabriel Ramirez"
+        },
+        "type_execution": "",
+        "date": "16/12/2024",
+        "time": "22:36:15",
+        "navigator_platform": "chrome",
+        "feature_name": "",
+        "scenarios": [
+            {
+                "name": "test",
+                "steps": [
+                    {
+                        "type": "Given",
+                        "text": "ingreso a pagina",
+                        "screenshot": "screenshot",
+                        "status": "passed"
+                    }
+                ],
+                "status": "passed"
+            }
+        ]
+    }
+}
