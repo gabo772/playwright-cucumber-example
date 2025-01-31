@@ -10,7 +10,7 @@ export class Driver{
     static async init(){
         this.browser = await chromium.launch({
             channel: 'chrome',
-            headless: false
+            headless: true
         });
         this.page = await this.browser.newPage();
     }
