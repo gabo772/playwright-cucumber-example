@@ -37,8 +37,7 @@ export default class extends World {
                 throw new Error("No se ha seleccionado navegador")
         }
         this.browser = await tipoNavegador.launch({
-            channel: channel,
-            headless: true
+            channel: channel
         });
         const context = await this.browser.newContext({
             viewport: {
