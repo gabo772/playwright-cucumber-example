@@ -1,5 +1,5 @@
 import { World } from "@cucumber/cucumber";
-import { Browser, chromium, Page, firefox, webkit, BrowserType } from "@playwright/test";
+import { Browser, chromium, Page, firefox, webkit, BrowserType, } from "@playwright/test";
 import { Platform } from "../utils/metaclass";
 
 
@@ -37,7 +37,8 @@ export default class extends World {
                 throw new Error("No se ha seleccionado navegador")
         }
         this.browser = await tipoNavegador.launch({
-            channel: channel
+            channel: channel,
+            headless:false
         });
         const context = await this.browser.newContext({
             viewport: {
