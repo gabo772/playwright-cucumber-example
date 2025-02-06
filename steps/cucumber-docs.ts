@@ -30,7 +30,7 @@ Then("valido que estoy en Docs", async function () {
 
 When("busco seccion {string}", { timeout: 15000 }, async function (this: CustomWorld, variableReport: string) {
     //(//input[@placeholder='How can we help?'])[1]
-    const inputSeccion = await this.page.locator("xpath=(//input[@placeholder='How can we help?'])[1]")
+    const inputSeccion = await this.page.locator("xpath=//button[@class='DocSearch DocSearch-Button']")
     await expect(inputSeccion).toBeEnabled();
     await inputSeccion.fill(variableReport)
     await this.page.waitForTimeout(5000)

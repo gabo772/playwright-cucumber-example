@@ -4,10 +4,10 @@ Feature: Buscar en un sitio web
   Scenario: Buscar en la pagina de Cucumber 1
     Given ingreso a la url "https://cucumber.io"
     When valido que estoy en la página principal
-    And busco "Docs"
+    And busco "Documentation"
     Then valido que estoy en Docs
     And busco seccion "Reports SmartBear"
-    And valido que estoy en "https://cucumber.io/docs/guides/api-automation/?query=Reports%20SmartBear"
+    And valido que estoy en "https://cucumber.io/blog/news/cucumber-acquired-by-smartbear/"
 
   @example2 @chrome
   Scenario: Buscar en la pagina de Cucumber 2

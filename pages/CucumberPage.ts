@@ -14,9 +14,9 @@ export class CucumberPage {
     // constructor 
     constructor(page: Page) {
         this.page = page;
-        this.h1_titulo = this.page.locator("xpath=//h1[text()='Tools & techniques that elevate teams to greatness']")
+        this.h1_titulo = this.page.locator("xpath=//strong[contains(text(),'Cucumber')]")
         this.link_api_docs = this.page.locator("xpath=//a[text()='API Docs']")
-        this.h1_api_docs = this.page.locator("xpath=//h1[text()='API Automation']")
+        this.h1_api_docs = this.page.locator("xpath=//h2[text()='What is Cucumber?']")
 
     }
 
