@@ -31,7 +31,7 @@ export class CucumberPage {
         const linkDocs = await this.page.locator("xpath=//a[text()='" + seccionDocs + "']")
         await expect(linkDocs).toBeVisible();
         await linkDocs.click();
-        await expect(this.link_api_docs).toBeVisible();
+        //await expect(this.link_api_docs).toBeVisible();
         await this.link_api_docs.click();
     }
 

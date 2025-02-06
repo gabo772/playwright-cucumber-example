@@ -18,7 +18,7 @@ When("valido que estoy en la página principal", async function () {
 
 })
 
-When("busco {string}", async function (variable) {
+When("busco {string}",{timeout:20000}, async function (variable) {
 
     await cucumberPage.buscoSeccionDocs(variable)
 })

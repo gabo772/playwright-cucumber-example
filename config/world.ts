@@ -39,7 +39,7 @@ export default class extends World {
         this.browser = await tipoNavegador.launch({
             channel: channel,
             headless:true,
-            args: ['--headless=new']
+            args: ["--headless=new"]
         });
         /*const context = await this.browser.newContext({
             viewport: {
