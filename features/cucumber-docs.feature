@@ -2,7 +2,7 @@ Feature: Buscar en un sitio web
 
   @example1 @chrome
   Scenario: Buscar en la pagina de Cucumber 1
-    Given ingreso a la url "https://www.whatismybrowser.com/"
+    Given ingreso a la url "https://cucumber.io"
     When valido que estoy en la página principal
     And busco "Docs"
     Then valido que estoy en Docs
