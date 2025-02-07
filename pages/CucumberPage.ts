@@ -32,7 +32,7 @@ export class CucumberPage {
         await expect(linkDocs).toBeVisible();
         await linkDocs.click();
         //await expect(this.link_api_docs).toBeVisible();
-        await this.link_api_docs.click();
+        //await this.link_api_docs.click();
     }
 
     async validoQueEstoyEnPantallaDocs() {

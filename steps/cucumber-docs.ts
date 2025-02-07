@@ -32,9 +32,11 @@ When("busco seccion {string}", { timeout: 15000 }, async function (this: CustomW
     //(//input[@placeholder='How can we help?'])[1]
     const inputSeccion = await this.page.locator("xpath=//button[@class='DocSearch DocSearch-Button']")
     await expect(inputSeccion).toBeEnabled();
-    await inputSeccion.fill(variableReport)
+    await inputSeccion.click();
+    const inputReal= await this.page.locator("xpath=//input[@class='DocSearch-Input']")
+    await inputReal.fill(variableReport)
     await this.page.waitForTimeout(5000)
-    await inputSeccion.press("Enter")
+    await inputReal.press("Enter")
     await this.page.waitForTimeout(4000)
 })
 
