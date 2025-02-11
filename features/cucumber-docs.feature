@@ -27,7 +27,7 @@ Feature: Buscar en un sitio web
     And busco seccion "Reports SmartBear"
     And valido que estoy en "https://cucumber.io/docs/guides/api-automation/?query=Reports%20SmartBear"
 
-  @example4 @firefox
+  @example4 @edge
   Scenario: Buscar en la pagina de Cucumber 4
     Given ingreso a la url "https://www.whatismybrowser.com/"
     When valido que estoy en la página principal
