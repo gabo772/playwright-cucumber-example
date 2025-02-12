@@ -35,8 +35,19 @@ Before({ timeout: 15000 }, async function (this: CustomWorld, scenario) {
     let tagsNavegadores = ["@chrome", "@firefox", "@edge"]
     let tag = scenario.gherkinDocument.feature?.children[scenarioId].scenario?.tags.find(tag => tagsNavegadores.includes(tag.name))
 
-    if (tag?.name == "@firefox") {
-        plataforma = Platform.FIREFOX
+    switch (tag?.name) {
+        case "@firefox":
+            plataforma=Platform.FIREFOX
+            break;
+        case "@edge":
+            plataforma=Platform.EDGE
+            break;
+        case "@safari":
+            plataforma=Platform.SAFARI
+            break;
+
+        default:
+            break;
     }
     setParallelCanAssign(mySecondRule)
     await this.init(plataforma);
